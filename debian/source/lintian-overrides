@@ -1,0 +1,4 @@
+# It seems that JSON license is applicable only to JSON_checker component of RapidJSON.
+# However, I fail to find any trace of JSON_checker in Embree 4.x source.
+# If it is really not there, reject was based on false-positive and should be overridden.
+embree source: license-problem-json-evil third-party-programs.txt

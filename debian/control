@@ -1,15 +1,115 @@
-Source: template-repository
-Section: unknown
+Source: embree
+Section: graphics
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Uploaders:
+ Mathieu Malaterre <malat@debian.org>,
+ Matteo F. Vescovi <mfv@debian.org>
+Build-Depends:
+ cmake,
+ debhelper-compat (= 13),
+ freeglut3-dev,
+ ispc,
+ libglfw3-dev,
+ libjpeg-dev,
+ libopenimageio-dev,
+ libpng-dev,
+ libtbb-dev,
+ libxi-dev,
+ libxmu-dev,
+ pkgconf
+Build-Depends-Indep:
+ fig2dev,
+ fonts-freefont-ttf,
+ latex2html,
+ pandoc,
+ texlive-lang-greek,
+ texlive-latex-base,
+ texlive-xetex,
+ txt2man
+Rules-Requires-Root: no
+Standards-Version: 4.7.0
+Homepage: https://embree.github.io/
+Vcs-Git: https://salsa.debian.org/multimedia-team/embree.git
+Vcs-Browser: https://salsa.debian.org/multimedia-team/embree
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: libembree4-4
+Section: libs
+Architecture: any-amd64 arm64
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: High Performance Ray Tracing Kernels - runtime
+ Intel(R) Embree is a collection of high-performance ray tracing kernels,
+ developed at Intel. The target users of Intel(R) Embree are
+ graphics application engineers who want to improve the performance of
+ their photo-realistic rendering application by leveraging Embree's
+ performance-optimized ray tracing kernels. The kernels are optimized for
+ the latest Intel(R) processors with support for SSE, AVX, AVX2, and
+ AVX-512 instructions. Intel(R) Embree supports runtime code selection
+ to choose the traversal and build algorithms that best matches
+ the instruction set of your CPU.
+ .
+ This package contains the runtime library for building programs that
+ use Embree.
+
+Package: libembree-dev
+Section: libdevel
+Architecture: any-amd64 arm64
+Multi-Arch: same
+Depends:
+ libembree4-4 (= ${binary:Version}),
+ libtbb-dev,
+ ${misc:Depends}
+Suggests: embree-tools
+Description: High Performance Ray Tracing Kernels - development
+ Intel(R) Embree is a collection of high-performance ray tracing kernels,
+ developed at Intel. The target users of Intel(R) Embree are
+ graphics application engineers who want to improve the performance of
+ their photo-realistic rendering application by leveraging Embree's
+ performance-optimized ray tracing kernels. The kernels are optimized for
+ the latest Intel(R) processors with support for SSE, AVX, AVX2, and
+ AVX-512 instructions. Intel(R) Embree supports runtime code selection
+ to choose the traversal and build algorithms that best matches
+ the instruction set of your CPU.
+ .
+ This package contains the headers library for building programs that
+ use Embree.
+
+Package: libembree-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: High Performance Ray Tracing Kernels - documentation
+ Intel(R) Embree is a collection of high-performance ray tracing kernels,
+ developed at Intel. The target users of Intel(R) Embree are
+ graphics application engineers who want to improve the performance of
+ their photo-realistic rendering application by leveraging Embree's
+ performance-optimized ray tracing kernels. The kernels are optimized for
+ the latest Intel(R) processors with support for SSE, AVX, AVX2, and
+ AVX-512 instructions. Intel(R) Embree supports runtime code selection
+ to choose the traversal and build algorithms that best matches
+ the instruction set of your CPU.
+ .
+ This package provides the official documentation.
+
+Package: embree-tools
+Architecture: any-amd64 arm64
+Multi-Arch: foreign
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: High Performance Ray Tracing Kernels - tools
+ Intel(R) Embree is a collection of high-performance ray tracing kernels,
+ developed at Intel. The target users of Intel(R) Embree are
+ graphics application engineers who want to improve the performance of
+ their photo-realistic rendering application by leveraging Embree's
+ performance-optimized ray tracing kernels. The kernels are optimized for
+ the latest Intel(R) processors with support for SSE, AVX, AVX2, and
+ AVX-512 instructions. Intel(R) Embree supports runtime code selection
+ to choose the traversal and build algorithms that best matches
+ the instruction set of your CPU.
+ .
+ This package provides the official command-line tools.

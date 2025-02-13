@@ -1,4 +1,47 @@
 #!/usr/bin/make -f
 
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+# Needed for texlive to respect SOURCE_DATE_EPOCH when setting date
+export FORCE_SOURCE_DATE = 1
+
+INSTDIR=debian/tmp
+
+# Set EMBREE_ARM CMake option on arm64
+ifneq (,$(filter $(DEB_TARGET_ARCH),arm64))
+	EMBREE_ARM=ON
+	export DEB_CXXFLAGS_MAINT_APPEND=-flax-vector-conversions
+else
+	EMBREE_ARM=OFF
+endif
+
 %:
-	dh $@
+	dh $@ \
+	--buildsystem=cmake \
+	--builddirectory=build \
+	--no-parallel
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_SKIP_RPATH=ON \
+		-DEMBREE_BACKFACE_CULLING=OFF \
+		-DEMBREE_ISPC_SUPPORT=ON \
+		-DEMBREE_RAY_MASK=ON \
+		-DEMBREE_ARM=$(EMBREE_ARM) \
+		-DEMBREE_IGNORE_CMAKE_CXX_FLAGS=OFF \
+		-DEMBREE_STATIC_LIB=OFF
+
+override_dh_auto_build-arch:
+	dh_auto_build
+
+override_dh_auto_build-indep:
+	dh_auto_build
+	$(MAKE) -C $(CURDIR)/doc/
+
+override_dh_auto_test:
+
+override_dh_auto_install:
+	dh_auto_install \
+                --buildsystem=cmake \
+                --destdir=$(INSTDIR)

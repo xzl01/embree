@@ -1,5 +1,251 @@
-template-repository (1.0-1) unstable; urgency=medium
+embree (4.3.3+dfsg-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream release
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Matteo F. Vescovi <mfv@debian.org>  Sun, 29 Sep 2024 11:45:44 +0200
+
+embree (4.3.2+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Wed, 26 Jun 2024 20:00:28 +0200
+
+embree (4.3.1+dfsg-2) unstable; urgency=medium
+
+  [ Francois Mazen ]
+  * debian/: ISPC support enabled (Closes: #1068924)
+
+  [ Matteo F. Vescovi ]
+  * debian/control: S-V bump 4.6.2 -> 4.7.0 (no changes needed)
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Thu, 30 May 2024 14:13:21 +0200
+
+embree (4.3.1+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Fri, 26 Apr 2024 20:38:59 +0200
+
+embree (4.3.0+dfsg-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Sun, 07 Jan 2024 15:05:56 +0100
+
+embree (4.3.0+dfsg-1) experimental; urgency=medium
+
+  * New upstream release
+  * debian/control: texlive-lang-greek b-dep added (Closes: #1052881)
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Sat, 06 Jan 2024 14:19:32 +0100
+
+embree (4.2.0+dfsg-1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Sat, 19 Aug 2023 17:42:24 +0200
+
+embree (4.1.0+dfsg-1) experimental; urgency=medium
+
+  [ Matteo F. Vescovi ]
+  * New upstream release
+    - debian/: SONAME bump 3 -> 4
+  * debian/: useless file removal moved to specific file
+  * debian/: avoid installing duplicate CHANGELOG.md
+  * debian/control: S-V bump 4.6.1 -> 4.6.2 (no changes needed)
+  * debian/rules: force 'Release' as build type
+
+  [ Andrius Merkys ]
+  * debian/source/lintian-overrides: file added
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Wed, 28 Jun 2023 13:28:28 +0200
+
+embree (3.13.5+dfsg-2) unstable; urgency=medium
+
+  [ Stephan Lachnit ]
+  * d/control: libembree-dev should depend on libtbb-dev
+    (Closes: #1019487)
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Wed, 26 Oct 2022 20:28:18 +0200
+
+embree (3.13.5+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Sun, 09 Oct 2022 15:27:59 +0200
+
+embree (3.13.4+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control: S-V bump 4.6.0 -> 4.6.1 (no changes needed)
+  * debian/copyright: timestamp bump for debian/
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Sat, 16 Jul 2022 23:49:00 +0200
+
+embree (3.13.3+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+    - d/p/01-drop_readme.patch: patch refreshed against v3.13.3
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Sat, 26 Feb 2022 00:25:05 +0100
+
+embree (3.13.2+dfsg-1) unstable; urgency=medium
+
+  [ Matteo F. Vescovi ]
+  * New upstream release
+  * debian/control: S-V bump 4.5.1 -> 4.6.0 (no changes needed)
+  * debian/copyright: extend debian/ timepstamps
+
+  [ Vagrant Cascadian ]
+  * debian/rules: export reproducibility variable (Closes: #977553)
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Mon, 15 Nov 2021 23:37:33 +0100
+
+embree (3.13.1+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Mon, 06 Sep 2021 23:38:38 +0200
+
+embree (3.13.0+dfsg-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Tue, 17 Aug 2021 22:08:07 +0200
+
+embree (3.13.0+dfsg-1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Thu, 13 May 2021 23:23:02 +0200
+
+embree (3.12.2+dfsg-1) experimental; urgency=medium
+
+  * New upstream release
+    - debian/embree-tools.install: binary path updated
+  * debian/control: S-V bump 4.5.0 -> 4.5.1 (no changes needed)
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Sun, 21 Mar 2021 20:44:53 +0100
+
+embree (3.12.1+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/embree-tools.install: models under documentation
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Tue, 27 Oct 2020 22:53:08 +0100
+
+embree (3.11.0+dfsg-2) unstable; urgency=medium
+
+  * debian/embree-tools.install: embree_tests binary added
+    (Closes: #966271)
+  * debian/libembree-doc.install: drop models installation
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Tue, 28 Jul 2020 00:27:29 +0200
+
+embree (3.11.0+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Fri, 24 Jul 2020 23:13:27 +0200
+
+embree (3.10.0+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control: debhelper bump 12 -> 13
+  * debian/embree-tools.install: new binaries added
+  * debian/libembree-dev.install: cmake helpers installed
+  * debian/rules:
+    - RPATH skipping set
+    - useless stuff dropped
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Sat, 23 May 2020 21:21:14 +0200
+
+embree (3.9.0+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Fri, 17 Apr 2020 22:32:03 +0200
+
+embree (3.8.0+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/control: S-V bump 4.4.1 -> 4.5.0 (no changes needed)
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Sun, 09 Feb 2020 14:53:32 +0100
+
+embree (3.7.0+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Mon, 13 Jan 2020 23:36:51 +0100
+
+embree (3.6.1+dfsg-3) unstable; urgency=medium
+
+  * debian/control: drop python-dev from B-D (Closes: #943004)
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Wed, 08 Jan 2020 15:09:52 +0100
+
+embree (3.6.1+dfsg-2) unstable; urgency=medium
+
+   * debian/rules: parallel builds disabled
+   * debian/control:
+     - S-V bump 4.4.0 -> 4.4.1
+     - RRR set
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Sat, 02 Nov 2019 20:48:23 +0100
+
+embree (3.6.1+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Sat, 07 Sep 2019 13:36:05 +0200
+
+embree (3.6.0+dfsg-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Use debhelper-compat instead of debian/compat
+  * Bump Standards-Version to 4.4.0
+
+  [ Matteo F. Vescovi ]
+  * New upstream release
+  * debian/control: bump debhelper 11 -> 12
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Wed, 28 Aug 2019 23:23:21 +0200
+
+embree (3.5.2+dfsg-2) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Mon, 08 Jul 2019 15:09:17 +0200
+
+embree (3.5.2+dfsg-1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Fri, 15 Mar 2019 20:33:37 +0100
+
+embree (3.5.1+dfsg-1) experimental; urgency=medium
+
+  * New upstream release
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Mon, 04 Mar 2019 21:27:15 +0100
+
+embree (3.5.0+dfsg-3) experimental; urgency=low
+
+  * debian/control: 'amd64' -> 'any-amd64' for Architecture field
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Wed, 27 Feb 2019 16:58:15 +0100
+
+embree (3.5.0+dfsg-2) experimental; urgency=low
+
+  * debian/control: set Architecture to 'amd64' only
+  * debian/: rename 'convert' command to 'embree-convert'
+    (Closes: #922927)
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Wed, 27 Feb 2019 14:39:52 +0100
+
+embree (3.5.0+dfsg-1) experimental; urgency=low
+
+  * Initial release. (Closes: #921386)
+
+ -- Matteo F. Vescovi <mfv@debian.org>  Sat, 16 Feb 2019 14:13:19 +0100

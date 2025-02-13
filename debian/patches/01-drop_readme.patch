@@ -1,0 +1,17 @@
+Description: Drop native readme.pdf on installation
+ That same file is rebuilt from sources on package build.
+Author: Matteo F. Vescovi <mfv@debian.org>
+Date: 2023-06-23
+
+diff --git a/common/cmake/package.cmake b/common/cmake/package.cmake
+index c3ae533..a193421 100644
+--- a/common/cmake/package.cmake
++++ b/common/cmake/package.cmake
+@@ -151,7 +151,6 @@ ENDIF()
+ INSTALL(FILES "${PROJECT_SOURCE_DIR}/LICENSE.txt" DESTINATION "${CMAKE_INSTALL_DOCDIR}" COMPONENT lib)
+ INSTALL(FILES "${PROJECT_SOURCE_DIR}/CHANGELOG.md" DESTINATION "${CMAKE_INSTALL_DOCDIR}" COMPONENT lib)
+ INSTALL(FILES "${PROJECT_SOURCE_DIR}/README.md" DESTINATION "${CMAKE_INSTALL_DOCDIR}" COMPONENT lib)
+-INSTALL(FILES "${PROJECT_SOURCE_DIR}/readme.pdf" DESTINATION "${CMAKE_INSTALL_DOCDIR}" COMPONENT lib)
+ INSTALL(FILES "${PROJECT_SOURCE_DIR}/third-party-programs.txt" DESTINATION "${CMAKE_INSTALL_DOCDIR}" COMPONENT lib)
+ INSTALL(FILES "${PROJECT_SOURCE_DIR}/third-party-programs-TBB.txt" DESTINATION "${CMAKE_INSTALL_DOCDIR}" COMPONENT lib)
+ INSTALL(FILES "${PROJECT_SOURCE_DIR}/third-party-programs-OIDN.txt" DESTINATION "${CMAKE_INSTALL_DOCDIR}" COMPONENT lib)

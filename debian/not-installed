@@ -1,0 +1,6 @@
+usr/embree-vars.*
+usr/share/doc/embree4/CHANGELOG.md
+usr/share/doc/embree4/LICENSE.txt
+usr/share/doc/embree4/third-party-programs*.txt
+usr/src/README.md
+usr/src/minimal/*
