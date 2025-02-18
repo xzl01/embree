@@ -15,6 +15,12 @@ else
 	EMBREE_ARM=OFF
 endif
 
+ifneq (,$(filter $(DEB_HOST_ARCH),loong64 riscv64))
+	ISPC_SUPPORT=OFF
+else
+	ISPC_SUPPORT=ON
+endif
+
 %:
 	dh $@ \
 	--buildsystem=cmake \
@@ -26,7 +32,7 @@ override_dh_auto_configure:
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_SKIP_RPATH=ON \
 		-DEMBREE_BACKFACE_CULLING=OFF \
-		-DEMBREE_ISPC_SUPPORT=ON \
+		-DEMBREE_ISPC_SUPPORT=$(ISPC_SUPPORT) \
 		-DEMBREE_RAY_MASK=ON \
 		-DEMBREE_ARM=$(EMBREE_ARM) \
 		-DEMBREE_IGNORE_CMAKE_CXX_FLAGS=OFF \

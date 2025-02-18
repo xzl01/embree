@@ -9,7 +9,7 @@ Build-Depends:
  cmake,
  debhelper-compat (= 13),
  freeglut3-dev,
- ispc,
+ ispc [!loong64 !riscv64],
  libglfw3-dev,
  libjpeg-dev,
  libopenimageio-dev,

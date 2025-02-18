@@ -1,3 +1,9 @@
+embree (4.3.3+dfsg-1deepin1) unstable; urgency=medium
+
+  * Disable ispc support in loong64 and riscv64.
+
+ -- xiangzelong <xiangzelong@deepin.org>  Tue, 18 Feb 2025 14:00:16 +0800
+
 embree (4.3.3+dfsg-1) unstable; urgency=medium
 
   * New upstream release
